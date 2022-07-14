@@ -95,13 +95,14 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Sales Invoice": {
+		"on_submit": "rafeequewoods.crud_events.generate_gst_invoice"
+	},
+	"Payment Entry":{
+		"on_submit": "rafeequewoods.crud_events.generate_payment_entry"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -186,3 +187,22 @@ user_data_fields = [
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            [
+                "name", "in", [
+					"Payment Entry-auto_creation",
+					"Sales Invoice-gst_same_rate",
+					"Sales Invoice-auto_creation",
+					"GST Settings-gst_company",
+					"Sales Invoice Item-gst_cut",
+					"Sales Invoice Item-use_same_rate",
+					"Item-gst_cut"
+				]
+			]
+		]
+	}
+]
