@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include rafeequewoods *.css
+recursive-include rafeequewoods *.csv
+recursive-include rafeequewoods *.html
+recursive-include rafeequewoods *.ico
+recursive-include rafeequewoods *.js
+recursive-include rafeequewoods *.json
+recursive-include rafeequewoods *.md
+recursive-include rafeequewoods *.png
+recursive-include rafeequewoods *.py
+recursive-include rafeequewoods *.svg
+recursive-include rafeequewoods *.txt
+recursive-exclude rafeequewoods *.pyc
